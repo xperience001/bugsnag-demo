@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
+import Bugsnag from '@bugsnag/js'
 
 function App() {
+  useEffect(() => {
+    Bugsnag.notify(new Error('Test error'))
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
